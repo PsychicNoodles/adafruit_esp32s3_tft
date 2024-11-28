@@ -108,4 +108,81 @@ pub mod gpio {
     pub type Mtms = Gpio42;
 
     pub type TftBacklight = Gpio45;
+
+    pub struct TypedGpio {
+        pub boot_button: BootButton,
+        pub tx: Gpio1,
+        pub rx: Gpio2,
+
+        pub d5: Gpio5,
+        pub d6: Gpio6,
+
+        pub tft_cs: Gpio7,
+
+        pub a5: Gpio8,
+
+        pub d9: Gpio9,
+        pub d10: Gpio10,
+        pub d11: Gpio11,
+        pub d12: Gpio12,
+        pub led_pin: Gpio13,
+
+        pub a4: Gpio14,
+        pub a3: Gpio15,
+        pub a2: Gpio16,
+        pub a1: Gpio17,
+        pub a0: Gpio18,
+
+        pub tft_i2c_power: Gpio21,
+
+        pub neopixel_pin: Gpio33,
+        pub neopixel_power: Gpio34,
+
+        pub mosi: Gpio35,
+        pub sck: Gpio36,
+        pub miso: Gpio37,
+
+        pub tft_dc: Gpio39,
+        pub tft_reset: Gpio40,
+
+        pub scl: Gpio41,
+        pub sda: Gpio42,
+
+        pub tft_backlight: Gpio45,
+    }
+
+    impl TypedGpio {
+        pub fn new(pins: Pins) -> Self {
+            Self {
+                boot_button: pins.gpio0,
+                tx: pins.gpio1,
+                rx: pins.gpio2,
+                d5: pins.gpio5,
+                d6: pins.gpio6,
+                tft_cs: pins.gpio7,
+                a5: pins.gpio8,
+                d9: pins.gpio9,
+                d10: pins.gpio10,
+                d11: pins.gpio11,
+                d12: pins.gpio12,
+                led_pin: pins.gpio13,
+                a4: pins.gpio14,
+                a3: pins.gpio15,
+                a2: pins.gpio16,
+                a1: pins.gpio17,
+                a0: pins.gpio18,
+                tft_i2c_power: pins.gpio21,
+                neopixel_pin: pins.gpio33,
+                neopixel_power: pins.gpio34,
+                mosi: pins.gpio35,
+                sck: pins.gpio36,
+                miso: pins.gpio37,
+                tft_dc: pins.gpio39,
+                tft_reset: pins.gpio40,
+                scl: pins.gpio41,
+                sda: pins.gpio42,
+                tft_backlight: pins.gpio45,
+            }
+        }
+    }
 }
