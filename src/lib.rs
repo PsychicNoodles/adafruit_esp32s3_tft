@@ -63,7 +63,7 @@ pub const DAC1: u8 = 17;
 pub const DAC2: u8 = 18;
 
 #[cfg(feature = "esp-idf-hal")]
-mod gpio {
+pub mod gpio {
     use esp_idf_hal::gpio::*;
 
     pub type BootButton = Gpio0;
